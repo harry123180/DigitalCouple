@@ -69,7 +69,32 @@ public class socket:MonoBehaviour
         //傳送
         clientSocket.Send(sendData,sendData.Length,SocketFlags.None);
     }
+    void Dispatcher(float[] target_array,float[] reg_ref){
+        /* 
+        target_array 應傳入global.cs裡面管理的global array variable 
+        並且是管理Joint degree array
+        */
+        for (int i =1;i<=3;i++){//根據當前通訊格式 第0值用來分類 後面3個值分別對應XYZ
+            Debug.Log(i);
+            target_array[i-1]=reg_ref[i];//把暫存器值賦予過去目標陣列
+        }
+    }
+    void classfilter(float[] reg_ref){//分類-並派送
+        // 傳入暫存器 派送到全域變數
+        //Debug.Log(reg_ref[3]);
+    switch(reg_ref[0]){
+        case 0:
+            Dispatcher(global.LeftUpLeg,reg_ref);//編號0是LeftUpLeg
+            break;
+        case 1:
+            Dispatcher(global.RightUpLeg,reg_ref);//編號0是RightUpLeg
+            break;
+        default:
+                Debug.Log("Default case");
+                break;
+    }
 
+    }
     //伺服器接收
     void SocketReceive()
     {
@@ -92,20 +117,22 @@ public class socket:MonoBehaviour
             recvStr=Encoding.ASCII.GetString(recvData,0,recvLen);
             Debug.Log("data = " +recvStr);
             
-            string[] words = recvStr.Split(' ');//收到數據 先分割 EX:0 0 0 代表 angle=[0,0,0]
-            float[] reg = new float[3];//暫存器
+            string[] words = recvStr.Split(' ');//收到數據 先分割 EX: 0 0 0 0 代表 type 0 joint_type=[0,0,0]
+            float[] reg = new float[4];//暫存器
             int i =0;
             foreach (var word in words)
             {
                 reg[i] = float.Parse(word);
                 i++;
             }
+            classfilter(reg);
+            /*
             //把暫存器的角度值同步入全域變數
             global._angle1 = reg[0];
             global._angle2 = reg[1];
             global._angle3 = reg[2];
-            
-            
+            */
+    
             global.recvStr = recvStr;
             //print(recvStr);
             //將接收到的資料經過處理再發送出去
@@ -142,7 +169,7 @@ public class socket:MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+//..
     }
 
     void OnApplicationQuit()
