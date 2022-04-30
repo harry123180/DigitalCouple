@@ -76,7 +76,10 @@ public class socket:MonoBehaviour
         */
         for (int i =1;i<=3;i++){//根據當前通訊格式 第0值用來分類 後面3個值分別對應XYZ
             Debug.Log(i);
-            target_array[i-1]=reg_ref[i];//把暫存器值賦予過去目標陣列
+            if(reg_ref[i] != 777f ){
+                target_array[i-1]=reg_ref[i];//把暫存器值賦予過去目標陣列
+            }
+            
         }
     }
     void classfilter(float[] reg_ref){//分類-並派送
@@ -89,6 +92,209 @@ public class socket:MonoBehaviour
         case 1:
             Dispatcher(global.RightUpLeg,reg_ref);//編號0是RightUpLeg
             break;
+        case 2:
+            Dispatcher(global.Hips,reg_ref);//編號0是RightUpLeg
+            break;
+        case 3:
+            Dispatcher(global.LeftLeg,reg_ref);//編號0是RightUpLeg
+            break;
+        case 4:
+            Dispatcher(global.LeftFoot,reg_ref);//編號0是RightUpLeg
+            break;
+        case 5:
+            Dispatcher(global.LeftToeBase,reg_ref);//編號0是RightUpLeg
+            break;
+        case 6:
+            Dispatcher(global.LeftToe_End,reg_ref);//編號0是RightUpLeg
+            break;
+        case 7:
+            Dispatcher(global.RightLeg,reg_ref);//編號0是RightUpLeg
+            break;
+        case 8:
+            Dispatcher(global.RightFoot,reg_ref);//編號0是RightUpLeg
+            break;
+        case 9:
+            Dispatcher(global.RightToeBase,reg_ref);//編號0是RightUpLeg
+            break;
+        case 10:
+            Dispatcher(global.RightToe_End,reg_ref);//編號0是RightUpLeg
+            break;
+        case 11:
+            Dispatcher(global.Spine,reg_ref);//編號0是RightUpLeg
+            break;
+        case 12:
+            Dispatcher(global.Spine1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 13:
+            Dispatcher(global.Spine2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 14:
+            Dispatcher(global.LeftShoulder,reg_ref);//編號0是RightUpLeg
+            break;
+        case 15:
+            Dispatcher(global.LeftArm,reg_ref);//編號0是RightUpLeg
+            break;
+        case 16:
+            Dispatcher(global.LeftForeArm,reg_ref);//編號0是RightUpLeg
+            break;
+        case 17:
+            Dispatcher(global.LeftHand,reg_ref);//編號0是RightUpLeg
+            break;
+        case 18:
+            Dispatcher(global.LeftHandIndex1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 19:
+            Dispatcher(global.LeftHandIndex2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 20:
+            Dispatcher(global.LeftHandIndex3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 21:
+            Dispatcher(global.LeftHandIndex4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 22:
+            Dispatcher(global.LeftHandMiddle1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 23:
+            Dispatcher(global.LeftHandMiddle2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 24:
+            Dispatcher(global.LeftHandMiddle3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 25:
+            Dispatcher(global.LeftHandMiddle4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 26:
+            Dispatcher(global.LeftHandPinky1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 27:
+            Dispatcher(global.LeftHandPinky2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 28:
+            Dispatcher(global.LeftHandPinky3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 29:
+            Dispatcher(global.LeftHandPinky4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 30:
+            Dispatcher(global.LeftHandRing1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 31:
+            Dispatcher(global.LeftHandRing2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 32:
+            Dispatcher(global.LeftHandRing3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 33:
+            Dispatcher(global.LeftHandRing4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 34:
+            Dispatcher(global.LeftHandThumb1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 35:
+            Dispatcher(global.LeftHandThumb2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 36:
+            Dispatcher(global.LeftHandThumb3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 37:
+            Dispatcher(global.LeftHandThumb4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 38:
+            Dispatcher(global.Neck,reg_ref);//編號0是RightUpLeg
+            break;
+        case 39:
+            Dispatcher(global.Head,reg_ref);//編號0是RightUpLeg
+            break;
+        case 40:
+            Dispatcher(global.HeadTop_End,reg_ref);//編號0是RightUpLeg
+            break;
+        case 41:
+            Dispatcher(global.RightShoulder,reg_ref);//編號0是RightUpLeg
+            break;
+        case 42:
+            Dispatcher(global.RightArm,reg_ref);//編號0是RightUpLeg
+            break;
+        case 43:
+            Dispatcher(global.RightForeArm,reg_ref);//編號0是RightUpLeg
+            break;
+        case 44:
+            Dispatcher(global.RightHand,reg_ref);//編號0是RightUpLeg
+            break;
+        case 45:
+            Dispatcher(global.RightHandIndex1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 46:
+            Dispatcher(global.RightHandIndex2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 47:
+            Dispatcher(global.RightHandIndex3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 48:
+            Dispatcher(global.RightHandIndex4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 49:
+            Dispatcher(global.RightHandMiddle1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 50:
+            Dispatcher(global.RightHandMiddle2,reg_ref);//編號0是RightUpLeg
+            break;
+        case 51:
+            Dispatcher(global.RightHandMiddle3,reg_ref);//編號0是RightUpLeg
+            break;
+        case 52:
+            Dispatcher(global.RightHandMiddle4,reg_ref);//編號0是RightUpLeg
+            break;
+        case 53:
+            Dispatcher(global.RightHandPinky1,reg_ref);//編號0是RightUpLeg
+            break;
+        case 54:
+            Dispatcher(global.RightHandPinky2,reg_ref);
+            break;
+        case 55:
+            Dispatcher(global.RightHandPinky3,reg_ref);
+            break;
+        case 56:
+            Dispatcher(global.RightHandPinky4,reg_ref);
+            break;
+        case 57:
+            Dispatcher(global.RightHandRing1,reg_ref);
+            break;
+        case 58:
+            Dispatcher(global.RightHandRing2,reg_ref);
+            break;
+        case 59:
+            Dispatcher(global.RightHandRing3,reg_ref);
+            break;
+        case 60:
+            Dispatcher(global.RightHandRing4,reg_ref);
+            break;
+        case 61:
+            Dispatcher(global.RightThumb1,reg_ref);
+            break;
+        case 62:
+            Dispatcher(global.RightThumb2,reg_ref);
+            break;
+        case 63:
+            Dispatcher(global.RightThumb3,reg_ref);
+            break;
+        case 64:
+            Dispatcher(global.RightThumb4,reg_ref);
+            break;
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
         default:
                 Debug.Log("Default case");
                 break;
@@ -137,7 +343,7 @@ public class socket:MonoBehaviour
             //print(recvStr);
             //將接收到的資料經過處理再發送出去
             sendStr="From Server: "+recvStr;
-            SocketSend(sendStr);
+            //SocketSend(sendStr);
         }
     }
 
